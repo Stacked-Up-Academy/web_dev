@@ -1,0 +1,192 @@
+/* =========================================
+   COLORS - change these to change the whole site!
+   ========================================= */
+:root {
+    --background: #fff4e6;   /* soft cream */
+    --purple: #6a3fa0;       /* grape purple */
+    --pink: #ff5d8f;         /* bubblegum pink */
+    --orange: #ff9f1c;       /* mango orange */
+    --white: #ffffff;
+    --text: #3d2c4e;         /* dark purple for reading */
+}
+
+/* =========================================
+   WHOLE PAGE
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+/* Headings get the fun font */
+h1,
+h2,
+h3 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* =========================================
+   MENU
+   ========================================= */
+.menu {
+    display: flex;
+    justify-content: center;  /* centers the menu links */
+    gap: 12px;
+    padding: 16px;
+    background-color: var(--purple);
+}
+
+.menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;
+    padding: 8px 20px;
+    border-radius: 999px;
+}
+
+.menu a:hover,
+.menu a.active {
+    background-color: var(--pink);
+}
+
+/* =========================================
+   CENTER EVERYTHING
+   ========================================= */
+.centered-text {
+    max-width: 960px;
+    margin: 0 auto;           /* centers the page content */
+    padding: 40px 16px;
+    text-align: center;       /* centers the text */
+}
+
+/* =========================================
+   NAME + TITLES
+   ========================================= */
+h1 {
+    font-size: 48px;
+    color: var(--purple);
+    margin: 0 0 30px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--purple);
+    margin: 20px 0;
+}
+
+h3 {
+    color: var(--pink);
+    font-size: 24px;
+}
+
+/* =========================================
+   HOME PAGE CARD + LIST
+   ========================================= */
+.card {
+    background-color: var(--white);
+    max-width: 450px;
+    margin: 0 auto 30px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 4px solid var(--orange);
+}
+
+.fruit-list {
+    list-style: none;   /* removes the dots */
+    padding: 0;
+}
+
+.fruit-list li {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+/* =========================================
+   BUTTON (with hover!)
+   ========================================= */
+.myButton {
+    display: inline-block;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 999px;
+    margin-top: 20px;
+    transition: all 0.2s;   /* makes the hover smooth */
+}
+
+.myButton:hover {
+    background-color: var(--pink);
+    transform: scale(1.1);  /* grows a little */
+}
+
+/* =========================================
+   ABOUT PAGE - PICTURE BOXES, 3 IN A ROW
+   ========================================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 boxes per row */
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.box {
+    background-color: var(--white);
+    border: 4px solid var(--orange);
+    border-radius: 20px;
+    padding: 16px;
+    transition: transform 0.2s;
+}
+
+.box:hover {
+    transform: translateY(-6px);  /* box lifts up */
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;      /* fills the space without stretching */
+    border-radius: 12px;
+}
+
+.box h3 {
+    margin: 12px 0;
+}
+
+/* Links inside the boxes */
+.box a {
+    display: inline-block;
+    color: var(--white);
+    background-color: var(--purple);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 999px;
+}
+
+.box a:hover {
+    background-color: var(--pink);
+}
+
+/* =========================================
+   SMALL SCREENS (phones) - 1 box per row
+   ========================================= */
+@media (max-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
